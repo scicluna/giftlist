@@ -13,9 +13,17 @@ Occasion.init (
            primaryKey: true,
            autoIncrement: true,
          },
-         name :{
+         name: {
            type: DataTypes.STRING,
            allowNull: false,
+         },
+         date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+         },
+         location: {
+            type: DataTypes.STRING,
+            allowNull: false,
          },
          user_id: {
             type: DataTypes.INTEGER,
@@ -25,6 +33,7 @@ Occasion.init (
             },
          },
          
+
     },
     {
        sequelize,
