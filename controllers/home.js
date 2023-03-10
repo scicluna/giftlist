@@ -3,10 +3,12 @@ const router = require('express').Router();
 router.get('/', async(req, res) => {
 
     //grab list of occassions including their recipients and their recipients gifts
+    //Occasion.findall({all:true, nested:true}) - HOPEFULLY GETS US THERE
 
     const occasionList = [{
         id: '1',
         occasion_name: "Mary's Birthday Party",
+        occasion_date: "2023-01-01",
         recipients: [{
             id: '1',
             recipient_name: 'Mary',
@@ -19,6 +21,7 @@ router.get('/', async(req, res) => {
     {
         id: '2',
         occasion_name: "Christmas",
+        occasion_date: "2023-12-25",
         recipients: [{
             id: '2',
             recipient_name: 'Bob',

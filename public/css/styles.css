@@ -43,3 +43,42 @@ body {
 .adddiv>p {
     margin: 1vw;
 }
+
+.occassioncard {
+    background-color: #ffffff0c !important;
+    margin: 0 15px;
+    padding: 15px;
+}
+
+.occasiondetails {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.occasiondetails>h1,
+.occasiondetails>h4 {
+    padding-right: 15px;
+}
+
+.recipientcard {
+    background-color: #ffffff02 !important;
+    padding: 15px;
+}
+
+.gifts {
+    background-color: #ffffff02 !important;
+    padding: 15px;
+}
+
+.gift {
+    padding: 15px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}

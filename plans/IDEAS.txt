@@ -14,6 +14,10 @@ User has many special occasions
 Special Occasion has many gift
 Gift has one intended recipient
 
+User has many occasions
+occasions have many recipients
+recipients have many gifts
+
 Potential APIs: Amazon API (optional) (super cool), Other Eccomerce APIs
 
 Order of operation: Login -> Start new occasion -> Choose gifts -> Assign gifts
@@ -34,3 +38,9 @@ Title Names:
 Gift Broker?
 Gift Hive?
 Gift Hub?
+
+
+
+--------
+Home page:
+-Click on individual occassions to edit them and their recips and their recips gifts

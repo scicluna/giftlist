@@ -1,6 +1,15 @@
-<section class="occasionlist">
-    {{#each occasionList as |occasion|}}
-    <h1>{{occasion.occasion_name}}</h1>
+<div class="adddiv">
+    <a href="/newoccasion" class="addoccasion"><i class="fas fa-plus"></i></a>
+    <p>Add occasion</p>
+</div>
+{{#each occasionList as |occasion|}}
+<section class="card mb-3 occassioncard">
+    <div class="card-body"></div>
+    <div class="occasiondetails">
+        <h1>{{occasion.occasion_name}}</h1>
+        <h4>{{occasion.occasion_date}}</h4>
+    </div>
     {{>recipient recipient=occasion.recipients}}
-    {{/each}}
+    </div>
 </section>
+{{/each}}

@@ -1,6 +1,6 @@
 {{#each recipients as |recipient|}}
-<div class="recipient">
-    <h2>{{recipient.recipient_name}}</h2>
+<div class="recipientcard">
+    <h3 class="card-text">{{recipient.recipient_name}}</h3>
     {{>gift gifts=recipient.gifts}}
 </div>
 {{/each}}
