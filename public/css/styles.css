@@ -15,3 +15,31 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.addoccasion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5vh;
+    height: 2.5vh;
+    margin: 1vw;
+    padding: 5px;
+    border-radius: 10%;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.827);
+    border: 1px solid rgba(255, 255, 255, 0.694);
+}
+
+.addoccasion:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.adddiv {
+    display: flex;
+    align-items: center;
+}
+
+.adddiv>p {
+    margin: 1vw;
+}
