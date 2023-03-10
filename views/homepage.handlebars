@@ -1,0 +1,6 @@
+<section class="occasionlist">
+    {{#each occassionList as |occassion|}}
+    <h1>{{occasion.name}}</h1>
+    {{>recipient occassion.recipients}}
+    {{/each}}
+</section>

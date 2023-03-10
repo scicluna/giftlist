@@ -1,0 +1,6 @@
+{{#each recipients as |recipient|}}
+<div class="recipient">
+    <h2>{{recipient.name}}</h2>
+    {{>gifts recipient.gifts}}
+</div>
+{{/each}}
