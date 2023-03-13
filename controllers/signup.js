@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/signup', async (req, res) => {
+router.get('/', async (req, res) => {
     res.render('signup');
   });
 
