@@ -17,7 +17,7 @@ Gift.init (
            allowNull: false,
          },
          recipient_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'recipient',
                 key: 'id',

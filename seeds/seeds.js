@@ -23,7 +23,8 @@ seedAll();
 const { User } = require('../models');
 const userData = [
     {
-        user_name: 'coolman',
+
+        name: 'coolman',
         email: 'a@a.com',
         password: '12345678'
     }
