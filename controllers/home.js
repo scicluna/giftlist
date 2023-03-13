@@ -3,7 +3,7 @@ const router = require('express').Router();
 router.get('/', async(req, res) => {
 
     //grab list of occassions including their recipients and their recipients gifts
-    //Occasion.findall({all:true, nested:true}) - HOPEFULLY GETS US THERE
+    //Occasion.findall({all:true, nested:true}, {order: [occasion_date]}) - HOPEFULLY GETS US THERE
 
     const occasionList = [{
         id: '1',

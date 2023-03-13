@@ -15,6 +15,13 @@ Recipient.init (
         type: DataTypes.STRING,
         allowNull: false,
       },
+      occasion_id:{
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'occasion',
+          key: 'id',
+      },
+      }
  },
  {
     sequelize,
