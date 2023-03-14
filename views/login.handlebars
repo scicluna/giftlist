@@ -1,12 +1,12 @@
-<body>
-  <h1>Login Page</h1>
-  <form id="loginform">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-    <br>
-    <input id="inputlogin" value="Login">
-  </form>
-</body>
+<form class="loginform">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password">
+  </div>
+  <button id="inputlogin" type="submit" class="btn btn-primary">Submit</button>
+  <a href="/signup">Signup</a>
+</form>

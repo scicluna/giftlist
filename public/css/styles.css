@@ -16,7 +16,9 @@ body {
     justify-content: space-between;
 }
 
-.addoccasion {
+.addoccasion,
+.addrecipient,
+.addgift {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +32,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.694);
 }
 
-.addoccasion:hover {
+.addoccasion:hover,
+.addrecipient:hover,
+.addgift:hover {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
@@ -50,7 +54,8 @@ body {
     padding: 15px;
 }
 
-.occasiondetails {
+.occasiondetails,
+.recipientdetails {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -72,6 +77,7 @@ body {
 }
 
 .gift {
+    display: flex;
     padding: 15px;
 }
 
@@ -81,4 +87,44 @@ h2,
 h3,
 h4 {
     margin: 0;
+}
+
+.loginform,
+.signupform,
+.occasionform,
+.recipientform,
+.giftform {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin: 15px;
+}
+
+.loginform>button,
+.signupform>button,
+.occasionform>button,
+.recipientform>button,
+.giftform>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.edit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit>button {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 0.827);
+    border: 1px solid rgba(0, 0, 0, 0);
+    margin-left: 15px;
+}
+
+.edit>button:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
 }
