@@ -1,15 +1,24 @@
 <div class="adddiv">
-    <a href="/newoccasion" class="addoccasion"><i class="fas fa-plus"></i></a>
+    <a href="/occasion" class="addoccasion"><i class="fas fa-plus"></i></a>
     <p>Add occasion</p>
 </div>
-{{#each occasionList as |occasion|}}
+{{#each plainOccasionList as |occasion|}}
 <section class="card mb-3 occassioncard">
+
+
     <div class="card-body">
         <div class="occasiondetails">
-            <h1>{{occasion.occasion_name}}</h1>
-            <h4>{{occasion.occasion_date}}</h4>
+            <h1 data-occasiontitle="{{id}}">{{occasion.name}}</h1>
+            <h4>{{occasion.date}}</h4>
+            <div class="adddiv">
+                <a href="/recipient/{{occasion.id}}" class="addrecipient"><i class="fas fa-plus"></i></a>
+            </div>
+            <div class="edit">
+                <button class="editoccasion" data-edit={{id}}><i class="fas fa-pen"></i></button>
+                <button class="deleteoccasion" data-delete={{id}}><i class="fas fa-trash"></i> </button>
+            </div>
         </div>
-        {{>recipient recipient=occasion.recipients}}
+        {{>recipient recipients=occasion.recipients}}
     </div>
 </section>
 {{/each}}

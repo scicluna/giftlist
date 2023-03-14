@@ -22,12 +22,9 @@ router.post('/', withAuth, async (req, res) => {
 //update occasion
 router.put('/:id', withAuth, async (req, res) => {
     try {
-        const { name, date, location } = req.body;
+        const { name} = req.body;
         const updatedOccasion = await Occasion.update({
             name,
-            date,
-            location,
-        
       }, {
         where: {
             id: req.params.id,

@@ -19,4 +19,23 @@ router.post('/login', async (req, res) => {
     })
 })
 
+router.post('/signup', async(req, res) => {
+    const {name, password, email} = req.body
+
+    const userData = await User.create({name, password, email})
+    if(!userData) return res.status(400).json("Not a valid configuration")
+
+    const plainUser = userData.get({plain: true})
+    req.session.save((err)=>{
+        req.session.loggedIn = true
+        req.session.user = plainUser
+        res.status(200).json({ user: userData, message: 'You are now logged in!' })
+    })
+})
+
+router.post('/logout', (req,res) => {
+    if (req.session.loggedIn) {req.session.destroy(()=>{
+        res.status(204).end()
+    })} else res.status(404).end()
+})
 module.exports = router

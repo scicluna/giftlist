@@ -1,7 +1,11 @@
 <div class="gifts">
     {{#each gifts as |gift|}}
     <div class="gift">
-        <p>{{gift_name}}</p>
+        <p data-gifttext="{{id}}">{{name}}</p>
+        <div class="edit">
+            <button class="editgift" data-giftedit={{id}}><i class="fas fa-pen"></i></button>
+            <button class="deletegift" data-giftdelete={{id}}><i class="fas fa-trash"></i> </button>
+        </div>
     </div>
     {{/each}}
 </div>

@@ -1,6 +1,16 @@
 {{#each recipients as |recipient|}}
 <div class="recipientcard">
-    <h3 class="card-text">{{recipient.recipient_name}}</h3>
+    <div class="recipientdetails">
+        <h3 class="card-text" data-recipienttext="{{id}}">{{recipient.name}}</h3>
+        <div class="adddiv">
+            <a href="/gift/{{id}}" class="addgift"><i class="fas fa-plus"></i></a>
+            <div class="edit">
+                <button class="editrecipient" data-editrecipient={{id}}><i class="fas fa-pen"></i></button>
+                <button class="deleterecipient" data-deleterecipient={{id}}><i class="fas fa-trash"></i> </button>
+            </div>
+        </div>
+    </div>
     {{>gift gifts=recipient.gifts}}
+
 </div>
 {{/each}}
