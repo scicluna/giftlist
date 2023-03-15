@@ -32,8 +32,6 @@ Occasion.init (
                 key: 'id',
             },
          },
-         
-
     },
     {
        sequelize,

@@ -23,6 +23,28 @@ Gift.init (
                 key: 'id',
             }
          },
+         price: {
+            type: DataTypes.DECIMAL,
+         },
+         img1: {
+            type: DataTypes.STRING,
+         },
+         img2: {
+            type: DataTypes.STRING,
+         },
+         img3: {
+            type: DataTypes.STRING,
+         },
+         link1: {
+            type: DataTypes.STRING,
+         },
+         link2: {
+            type: DataTypes.STRING,
+         },
+         link3: {
+            type: DataTypes.STRING,
+         },
+      
     },
     {
        sequelize,

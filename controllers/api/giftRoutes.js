@@ -3,10 +3,11 @@ const {Gift, Recipient} = require('../../models')
 
 router.post('/:id', async(req, res) => {
     try{
-    const {name} = req.body
+    const {name, price, img1, img2, img3, link1, link2, link3} = req.body
+    
     const id = req.params.id
 
-    const giftData = await Gift.create({name, recipient_id: id})
+    const giftData = await Gift.create({name, recipient_id: id, price, img1, img2, img3, link1, link2, link3})
 
     //probably redirect it to whereverthey were editting
     res.status(200).redirect('/')
