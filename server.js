@@ -4,6 +4,7 @@ const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const path = require("path")
 const helpers = require('./utils/helpers')
+require('dotenv').config();
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'Super secret secret', //smuggle out into env
+  secret: process.env.SECRET, //smuggle out into env
   cookie: {},
   resave: false,
   saveUninitialized: true,
