@@ -4,9 +4,6 @@ const router = require('express').Router();
 
 router.get('/', async(req, res) => {
 
-    //grab list of occassions including their recipients and their recipients gifts
-    //Occasion.findall({all:true, nested:true}, {order: [occasion_date]}) - HOPEFULLY GETS US THERE
-    
     if (req.session.user){
         const occasionList = await Occasion.findAll({ include: { all: true, nested: true }, where: {user_id: req.session.user.id}})
         const plainOccasionList = occasionList.map(occasion=>occasion.get({plain:true}))
