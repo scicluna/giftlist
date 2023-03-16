@@ -1,12 +1,13 @@
-<form class="loginform">
-  <div class="mb-3">
+<form class="loginform col-lg-8 mx-auto vertAlign">
+  <div class="mb-3 ">
     <label for="username" class="form-label">Username</label>
-    <input type="text" class="form-control" id="username">
+    <input type="text" class="form-control form-control-lg" id="username">
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password">
+    <input type="password" class="form-control form-control-lg" id="password">
   </div>
-  <button id="inputlogin" type="submit" class="btn btn-primary">Submit</button>
-  <a href="/signup">Signup</a>
+  <a class="btn btn-primary btn-lg btn-block homeBttn" href="/login" role="button" id="inputlogin" type="submit">Log in</a>
+  <br>
+  <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn" href="/signup" role="button">Sign up</a>
 </form>

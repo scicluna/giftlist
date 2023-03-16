@@ -1,7 +1,8 @@
-<div class="adddiv">
-    <a href="/occasion" class="addoccasion"><i class="fas fa-plus"></i></a>
-    <p>Add occasion</p>
+{{#if loggedIn}}
+<div class="adddiv col-sm-2 mx-auto my-auto pb-3 pt-3">
+    <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn " href="/occasion" role="button">Add Occasion</a>
 </div>
+{{/if}}
 {{#each plainOccasionList as |occasion|}}
 <section class="card mb-3 occassioncard">
 
@@ -9,16 +10,40 @@
     <div class="card-body">
         <div class="occasiondetails">
             <h1 data-occasiontitle="{{id}}">{{occasion.name}}</h1>
-            <h4>{{format_date occasion.date}}</h4>
+            <h4><u>{{format_date occasion.date}}</u></h4><br>
             <div class="adddiv">
-                <a href="/recipient/{{occasion.id}}" class="addrecipient"><i class="fas fa-plus"></i></a>
+                <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn " href="/recipient/{{occasion.id}}" role="button">Add Recipient</a>
             </div>
             <div class="edit">
                 <button class="editoccasion" data-edit={{id}}><i class="fas fa-pen"></i></button>
                 <button class="deleteoccasion" data-delete={{id}}><i class="fas fa-trash"></i> </button>
             </div>
+            
+        </div>
+        <div class="card-body pt-0 pb-4">
+            <h4> <em>{{occasion.location}}</em></h4>
         </div>
         {{>recipient recipients=occasion.recipients}}
     </div>
+     
 </section>
 {{/each}}
+{{#if loggedIn}}
+                {{else}}
+            <div class="row h-100 vertAlign"></div>
+                <div class="intro col-lg-8 mx-auto my-auto">
+                    <h1 class="welcomeText">Do you love spending hours scrolling through Amazon, reading reviews, 
+                        comparing prices, and ultimately feeling more confused than when you started? 
+                        Yeah, neither do we. That's why we made Gifthub! With our user-friendly interface, 
+                        you can find the perfect gift in just a few clicks. And the best part? 
+                        You won't have to suffer through any of those awkward "excuse me, 
+                        can you help me find something?" interactions with store employees.
+                    </h1>
+                </div>
+                <br>
+                <div class="intro col-sm-2 mx-auto my-auto">
+                    <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn" href="/signup" role="button">Sign up</a><br>
+                    <a class="btn btn-primary btn-lg btn-block homeBttn" href="/login" role="button">Log in</a>
+                </div>
+            </div>
+                {{/if}}

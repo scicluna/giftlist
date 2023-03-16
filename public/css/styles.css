@@ -6,14 +6,17 @@
 
 body {
     font-family: 'Golos Text', sans-serif;
-    background-color: #071E22;
-    color: rgba(255, 255, 255, 0.803)
+    color: white;
+    background: #343A40;
 }
 
 .navigationbar {
-    background-color: #071722 !important;
+    background: #172121 !important;
     display: flex;
     justify-content: space-between;
+    color: white;
+    font-size: larger;
+
 }
 
 .addoccasion,
@@ -49,9 +52,11 @@ body {
 }
 
 .occassioncard {
-    background-color: #ffffff0c !important;
+    background-color: #03045e !important;
     margin: 0 15px;
     padding: 15px;
+    border-radius: 30px;
+    border: black solid 3px;
 }
 
 .occasiondetails,
@@ -67,18 +72,27 @@ body {
 }
 
 .recipientcard {
-    background-color: #ffffff02 !important;
+    background-color: #023e8a !important;
     padding: 15px;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: black solid 3px;
 }
 
 .gifts {
-    background-color: #ffffff02 !important;
+    background-color: #0077b6 !important;
     padding: 15px;
+    border: #172121 solid 3px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .gift {
     display: flex;
     padding: 15px;
+    
 }
 
 p,
@@ -96,8 +110,9 @@ h4 {
 .giftform {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 30%;
     margin: 15px;
+    font-size: larger;
 }
 
 .loginform>button,
@@ -108,7 +123,6 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
 }
 
 .edit {
@@ -129,13 +143,23 @@ h4 {
     color: rgb(255, 255, 255);
 }
 
-.hide {
-    opacity: 0;
+#logoimg {
+    max-width: 150px;
+    height: auto;
+    transform: translateX(-50%);
+    left: 45%;
+    position: absolute;
+    transform: translateY(-30%);
+
+}
+.navbar{
+    height: 100px;
 }
 
+p {
+    font-size: larger;
+}
 
-
-/* IGNORE */
 .load-wrapp {
     position: absolute;
     top: 14vh;
@@ -240,7 +264,62 @@ h4 {
     bottom: 0;
 }
 
+.intro{
+    width: 1000px;
+    height: auto;
+}
 
+.welcomeText{
+    text-align: center;
+    color: black;
+    background-image:linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
+}
+
+.vertAlign{
+    margin-top: 150px;
+}
+
+.homeBttn{
+    background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    color: black;
+}
+
+/*animate button and posibly text*/
+.homeBttn:hover {
+    background: linear-gradient(270deg, #e81cff, #40c9ff);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.form-label{
+    font-size: larger;
+}
 /* =Animate the stuff
   ------------------------ */
 
@@ -388,4 +467,8 @@ h4 {
         background-color: #f5634a;
         width: 25px;
     }
+}
+
+.hide{
+    opacity: 0;
 }
