@@ -1,9 +1,9 @@
 {{#each recipients as |recipient|}}
-<div class="recipientcard">
+<div class="recipientcard pl-3">
     <div class="recipientdetails">
-        <h3 class="card-text" data-recipienttext="{{id}}">{{recipient.name}}</h3>
+        <h3 class="card-text pl-3" data-recipienttext="{{id}}">{{recipient.name}}</h3>
         <div class="adddiv">
-            <a href="/gift/{{id}}" class="addgift"><i class="fas fa-plus"></i></a>
+            <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn m-3" href="/gift/{{id}}" role="button">Add Gift</a>
             <div class="edit">
                 <button class="editrecipient" data-editrecipient={{id}}><i class="fas fa-pen"></i></button>
                 <button class="deleterecipient" data-deleterecipient={{id}}><i class="fas fa-trash"></i> </button>
