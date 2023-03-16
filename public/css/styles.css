@@ -1,17 +1,15 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
     font-family: 'Golos Text', sans-serif;
     color: white;
-    background: #343A40;
+    background: #343434;
 }
 
 .navigationbar {
-    background: #172121 !important;
+    background: #010B13 !important;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -52,11 +50,8 @@ body {
 }
 
 .occassioncard {
-    background-color: #03045e !important;
     margin: 0 15px;
     padding: 15px;
-    border-radius: 30px;
-    border: black solid 3px;
 }
 
 .occasiondetails,
@@ -72,19 +67,13 @@ body {
 }
 
 .recipientcard {
-    background-color: #023e8a !important;
     padding: 15px;
-    border-radius: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: black solid 3px;
 }
 
 .gifts {
-    background-color: #0077b6 !important;
     padding: 15px;
-    border: #172121 solid 3px;
-    border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -110,9 +99,9 @@ h4 {
 .giftform {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    margin: 15px;
     font-size: larger;
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .loginform>button,
@@ -161,14 +150,14 @@ p {
 }
 
 .load-wrapp {
-    position: absolute;
+    position: relative;
     top: 14vh;
-    left: 6vw;
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 0 10px 10px 0;
-    padding: 20px 20px 20px;
+    left: 14vh;
+    float: auto;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: auto;
     border-radius: 5px;
     text-align: center;
 }
@@ -265,15 +254,16 @@ p {
 }
 
 .intro{
-    width: 1000px;
+    max-width: 1000px;
     height: auto;
 }
 
 .welcomeText{
     text-align: center;
-    color: black;
+    color: white;
     background-image:linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
     -webkit-background-clip: text;
+    background-clip: none;
     color: transparent;
     background-size: 400% 400%;
 
@@ -293,6 +283,7 @@ p {
 
 /*animate button and posibly text*/
 .homeBttn:hover {
+    
     background: linear-gradient(270deg, #e81cff, #40c9ff);
     background-size: 400% 400%;
 
@@ -471,4 +462,94 @@ p {
 
 .hide{
     opacity: 0;
+}
+
+
+/* loading circle*/
+
+.loader {
+   position: absolute;
+   background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 50%);
+   max-height: 250px;
+   max-width: 250px;
+   min-width: 100px;
+   min-height: 100px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   animation: load 2s linear infinite;
+   -webkit-animation: load 2s linear infinite;
+   -moz-animation: load 2s linear infinite;
+
+  }
+  
+  .loader::before{
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: #343A40;
+    animation: stop 2s linear infinite;
+    -webkit-animation: stop 2s linear infinite;
+    -moz-animation: stop 2s linear infinite;
+    
+  }
+
+  .loader::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    animation: loadOp 2s linear infinite;
+    -webkit-animation: loadOp 2s linear infinite;
+    -moz-animation: loadOp 2s linear infinite;
+  }
+  @keyframes load {
+    100% { transform: rotate(360deg); }
+  }
+  @-moz-keyframes load {
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes load {
+    100% { transform: rotate(360deg); }
+}
+
+  @keyframes loadOp {
+    100% {transform: rotate(-720deg);}
+  }
+  @-moz-keyframes loadOp {
+    100% {transform: rotate(-720deg);}
+}
+@-webkit-keyframes loadOp {
+    100% {transform: rotate(-720deg);}
+}
+
+  @keyframes stop {
+    100% {transform: rotate(-360deg);}
+  }
+  @-moz-keyframes stop {
+    100% {transform: rotate(-360deg);}
+}
+@-webkit-keyframes stop {
+    100% {transform: rotate(-360deg);}
+}
+
+  .content {
+    max-width: auto;
+    margin: auto;
+  }
+
+  .loadingDiv{
+    height: 100px;
+  }
+
+  .btn-gradient-2 {
+  background: linear-gradient(#1B1B1B, #1B1B1B) padding-box,
+  linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%) border-box;
+  border-radius: 30px;
+  border: 4px solid transparent;
 }
