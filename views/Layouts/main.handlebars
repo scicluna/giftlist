@@ -30,7 +30,7 @@
     <title>Giftlist</title>
 </head>
 
-<body>
+<body class="content">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navigationbar">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,14 +51,17 @@
                     <a class="nav-link" href="/login">Login</a>
                 </li>
                 {{/if}}
-                <div class="logo container"><img id="logoimg" src="/Images/Gifthub_logo.png"></div>
+                
             </ul>
             {{#if loggedIn}}
-            <div class="username">{{user.name}}</div>
+            <div class="username mr-5"> <h4>Hey there, <u>{{user.name}}</u>!</h4></div>
             {{/if}}
         </div>
+        <img class="logo mt-4" id="logoimg" src="/Images/Gifthub_logo.png">
     </nav>
+    <div class="m-3">
     {{{body}}}
+    </div>
 </body>
 
 </html>
