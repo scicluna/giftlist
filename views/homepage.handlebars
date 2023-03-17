@@ -4,7 +4,7 @@
 </div>
 {{/if}}
 {{#each plainOccasionList as |occasion|}}
-<section class="card mb-3 occassioncard btn-gradient-2">
+<section class="card mb-3 occassioncard btn-gradient-2" data-aos="fade-right">
 
 
     <div class="card-body">
@@ -12,36 +12,38 @@
             <h1 data-occasiontitle="{{id}}">{{occasion.name}}</h1>
             <h4><u>{{format_date occasion.date}}</u></h4><br>
             <div class="adddiv">
-                <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn " href="/recipient/{{occasion.id}}" role="button">Add Recipient</a>
+                <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn " href="/recipient/{{occasion.id}}"
+                    role="button">Add Recipient</a>
             </div>
             <div class="edit">
                 <button class="editoccasion" data-edit={{id}}><i class="fas fa-pen"></i></button>
                 <button class="deleteoccasion" data-delete={{id}}><i class="fas fa-trash"></i> </button>
             </div>
-            
+
         </div>
         <div class="card-body pt-0 pb-4">
             <h4> <em>{{occasion.location}}</em></h4>
         </div>
         {{>recipient recipients=occasion.recipients}}
     </div>
-     
+
 </section>
 {{/each}}
 {{#if loggedIn}}
-                {{else}}
-            <div class="row h-100 vertAlign"></div>
-                <div class="intro col-lg-8 mx-auto my-auto">
-                    <h1 class="welcomeText">Hey there, gift-givers! Welcome to Gifthub - the place where you can plan the perfect presents for your loved ones. 
-                        Whether it's a birthday, anniversary, or any other special occasion, 
-                        Gifthub has got your back. With our user-friendly interface, 
-                        you'll be able to keep track of all your gifting needs in no time.
-                    </h1>
-                </div>
-                <br>
-                <div class="intro col-sm-2 mx-auto my-auto">
-                    <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn" href="/signup" role="button">Sign up</a><br>
-                    <a class="btn btn-primary btn-lg btn-block homeBttn" href="/login" role="button">Log in</a>
-                </div>
-            </div>
-                {{/if}}
+{{else}}
+<div class="row h-100 vertAlign"></div>
+<div class="intro col-lg-8 mx-auto my-auto">
+    <h1 class="welcomeText">Hey there, gift-givers! Welcome to Gifthub - the place where you can plan the perfect
+        presents for your loved ones.
+        Whether it's a birthday, anniversary, or any other special occasion,
+        Gifthub has got your back. With our user-friendly interface,
+        you'll be able to keep track of all your gifting needs in no time.
+    </h1>
+</div>
+<br>
+<div class="intro col-sm-2 mx-auto my-auto">
+    <a class="btn btn-primary btn-lg btn-block homeBttn accountBttn" href="/signup" role="button">Sign up</a><br>
+    <a class="btn btn-primary btn-lg btn-block homeBttn" href="/login" role="button">Log in</a>
+</div>
+</div>
+{{/if}}
