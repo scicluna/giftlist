@@ -11,15 +11,25 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({
+  helpers,
+  extname      :'handlebars',
+  layoutsDir   : 'views/Layouts',
+  defaultLayout: 'main',
+  partialsDir  : [
+      'views/Partials'
+  ]
+});
+
 
 const sess = {
-  secret: process.env.SECRET, //smuggle out into env
+  secret: 'super secret thing is secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
+    expiration: 1 * 60 * 60 * 1000 //1 hour expiration on sessions
   })
 };
 
