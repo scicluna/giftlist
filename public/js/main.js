@@ -1,3 +1,5 @@
+const API = '8AC89DF9945541E0B5417EA64BD92267'
+
 async function logIn(e){
   e.preventDefault()
 
@@ -93,20 +95,30 @@ async function newGift(e){
   const id = e.currentTarget.dataset.recipient_id
 
   document.querySelector('.load-wrapp').classList.remove("hide")
-  const apiurl = `https://api.rainforestapi.com/request?api_key=6F59069603B045B486F480A80D5C27AA&type=search&amazon_domain=amazon.com&search_term=${name}&sort_by=price_low_to_high`;
+  const apiurl = `https://api.rainforestapi.com/request?api_key=${API}&type=search&amazon_domain=amazon.com&search_term=${name}&sort_by=featured`;
   const rainforestResponse = await fetch(apiurl)
+  if (!rainforestResponse.ok) return alert("API FAILURE - REFRESH KEY")
   const rainForestData = await rainforestResponse.json()
-  const price = rainForestData.search_results[0].price.value;
+
+  const price = rainForestData.search_results[0]?.price?.value || null;
   const img1 = rainForestData.search_results[0].image;
   const img2 = rainForestData.search_results[1].image;
   const img3 = rainForestData.search_results[2].image;
+  const img4 = rainForestData.search_results[3].image;
+  const img5 = rainForestData.search_results[4].image;
+  const img6 = rainForestData.search_results[5].image;
   const link1 = rainForestData.search_results[0].link;
   const link2 = rainForestData.search_results[1].link;
   const link3 = rainForestData.search_results[2].link;
+  const link4 = rainForestData.search_results[3].link;
+  const link5 = rainForestData.search_results[4].link;
+  const link6 = rainForestData.search_results[5].link;
+
+  console.log(rainForestData)
   
   const response = await fetch(`/api/gift/${id}`, {
     method: 'POST',
-    body: JSON.stringify({name, price, img1, img2, img3, link1, link2, link3}),
+    body: JSON.stringify({name, price, img1, img2, img3,img4, img5, img6, link1, link2, link3, link4, link5, link6}),
     headers: { 'content-type': 'application/json' }
   })
     if (response.ok) window.location.replace('/')
@@ -238,9 +250,31 @@ const saveGift = async(e) => {
   const id = e.currentTarget.dataset.gifttext
   const name = targetElement.innerText
 
+  console.log(document.querySelector(`[data-hide="4"]`))
+  document.querySelector(`[data-hide="${id}"]`).classList.remove('hide')
+  const apiurl = `https://api.rainforestapi.com/request?api_key=${API}&type=search&amazon_domain=amazon.com&search_term=${name}&sort_by=featured`;
+  const rainforestResponse = await fetch(apiurl)
+  if (!rainforestResponse.ok) return alert("API FAILURE - REFRESH KEY")
+  const rainForestData = await rainforestResponse.json()
+  document.querySelector(`[data-hide="${id}"]`).classList.add('hide')
+
+  const price = rainForestData.search_results[0]?.price?.value;
+  const img1 = rainForestData.search_results[0].image;
+  const img2 = rainForestData.search_results[1].image;
+  const img3 = rainForestData.search_results[2].image;
+  const img4 = rainForestData.search_results[3].image;
+  const img5 = rainForestData.search_results[4].image;
+  const img6 = rainForestData.search_results[5].image;
+  const link1 = rainForestData.search_results[0].link;
+  const link2 = rainForestData.search_results[1].link;
+  const link3 = rainForestData.search_results[2].link;
+  const link4 = rainForestData.search_results[3].link;
+  const link5 = rainForestData.search_results[4].link;
+  const link6 = rainForestData.search_results[5].link;
+
   const response = await fetch(`/api/gift/${id}`, {
       method: "PUT",
-      body: JSON.stringify({name}),
+      body: JSON.stringify({name, price, img1, img2, img3,img4, img5, img6, link1, link2, link3, link4, link5, link6}),
       headers: {'Content-Type': 'application/json'}
   })
   if (response.ok) document.location.replace(`/`)

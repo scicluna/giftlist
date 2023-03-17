@@ -35,16 +35,33 @@ Gift.init (
          img3: {
             type: DataTypes.STRING,
          },
-         link1: {
+         img4: {
             type: DataTypes.STRING,
+         },
+         img5: {
+            type: DataTypes.STRING,
+         },
+         img6: {
+            type: DataTypes.STRING,
+         },
+         link1: {
+            type: DataTypes.TEXT,
          },
          link2: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
          },
          link3: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
          },
-      
+         link4: {
+            type: DataTypes.TEXT,
+         },
+         link5: {
+            type: DataTypes.TEXT,
+         },
+         link6: {
+            type: DataTypes.TEXT,
+         },
     },
     {
        sequelize,

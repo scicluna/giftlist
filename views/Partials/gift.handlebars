@@ -1,11 +1,31 @@
-<div class="gifts btn-gradient-2 ml-3">
+<div class="giftbox">
     {{#each gifts as |gift|}}
-    <div class="gift">
-        <p data-gifttext="{{id}}">{{name}}</p>
-        <div class="edit">
-            <button class="editgift" data-giftedit={{id}}><i class="fas fa-pen"></i></button>
-            <button class="deletegift" data-giftdelete={{id}}><i class="fas fa-trash"></i> </button>
+    <div class="gifts btn-gradient-2 ml-3">
+        <div class="gift">
+            <p data-gifttext="{{id}}">{{name}}</p>
+            <div class="edit">
+                <button class="editgift" data-giftedit={{id}}><i class="fas fa-pen"></i></button>
+                <button class="deletegift" data-giftdelete={{id}}><i class="fas fa-trash"></i> </button>
+                <div class="loadingDiv2">
+                    <div class="load-wrapp hide loader" data-hide="{{id}}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="imgs">
+            <a href="{{gift.link1}}" target="_blank" style="background-image:url('{{gift.img1}}')"
+                class="amazonimg"></a>
+            <a href="{{gift.link2}}" target="_blank" style="background-image:url('{{gift.img2}}')"
+                class="amazonimg"></a>
+            <a href="{{gift.link3}}" target="_blank" style="background-image:url('{{gift.img3}}')"
+                class="amazonimg"></a>
+            <a href="{{gift.link4}}" target="_blank" style="background-image:url('{{gift.img4}}')"
+                class="amazonimg"></a>
+            <a href="{{gift.link5}}" target="_blank" style="background-image:url('{{gift.img5}}')"
+                class="amazonimg"></a>
+            <a href="{{gift.link6}}" target="_blank" style="background-image:url('{{gift.img6}}')"
+                class="amazonimg"></a>
         </div>
     </div>
     {{/each}}
+
 </div>
