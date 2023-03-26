@@ -614,6 +614,8 @@ p {
     justify-content: center;
     margin-left: 15px;
     margin-top: 10px;
+    width: 15px;
+    height: 15px;
 }
 
 .btn-gradient-2 {

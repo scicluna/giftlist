@@ -250,13 +250,28 @@ const saveGift = async(e) => {
   const id = e.currentTarget.dataset.gifttext
   const name = targetElement.innerText
 
-  console.log(document.querySelector(`[data-hide="4"]`))
+  document.querySelectorAll('.editgift').forEach(edit=>{
+    edit.classList.add("hide")
+  })
+
+  document.querySelectorAll('.deletegift').forEach(edit=>{
+    edit.classList.add("hide")
+  })
+
   document.querySelector(`[data-hide="${id}"]`).classList.remove('hide')
   const apiurl = `https://api.rainforestapi.com/request?api_key=${API}&type=search&amazon_domain=amazon.com&search_term=${name}&sort_by=featured`;
   const rainforestResponse = await fetch(apiurl)
   if (!rainforestResponse.ok) return alert("API FAILURE - REFRESH KEY")
   const rainForestData = await rainforestResponse.json()
   document.querySelector(`[data-hide="${id}"]`).classList.add('hide')
+
+  document.querySelectorAll('.editgift').forEach(edit=>{
+    edit.classList.remove("hide")
+  })
+
+  document.querySelectorAll('.deletegift').forEach(edit=>{
+    edit.classList.remove("hide")
+  })
 
   const price = rainForestData.search_results[0]?.price?.value;
   const img1 = rainForestData.search_results[0].image;
