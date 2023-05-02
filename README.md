@@ -22,7 +22,7 @@
   ## Usage
 
   This project's easy to use UI will guide you into making occassions, recipients, and gifts so that you can make your plans accordingly.  
-  Check it out at: [gifthub.herokuapp.com/](gifthub.herokuapp.com/)
+  Check it out at: [gifthub.herokuapp.com/](https://gifthub.herokuapp.com/)
   ![](./public/Images/example.png)
 
   ## Credits
