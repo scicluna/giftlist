@@ -4,7 +4,11 @@
 
   ## Description
 
-  A one stop site for planning out your gift givings!
+Introducing a comprehensive solution for organizing your gift-giving endeavors! This group project, collaboratively developed by dfgalus, kdnagpal, and scicluna, served as our midpoint assignment at the EdX Michigan State Fullstack bootcamp, showcasing the culmination of our acquired skills thus far.
+
+The frontend is built using Handlebars and is delivered via a backend Express server. We employed MySQL as our database and utilized Sequelize as our ORM. This project exemplifies our growth as emerging developers, and we hope you appreciate using it as much as we relished creating it.
+
+(Please note, if the site is inoperable, we may have ceased funding for the API calls. To request access, kindly email sciclunajl@gmail.com.)
 
   ## Table of Contents
 
